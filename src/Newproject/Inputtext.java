@@ -1,21 +1,21 @@
 package Newproject;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-public class Isselected {
+
+public class Inputtext {
 
 	public static void main(String[] args) throws InterruptedException {
 		WebDriver driver=new ChromeDriver();
 		driver.get("http://demo.guru99.com/test/facebook.html");
+		WebElement w=driver.findElement(By.className("inputtext"));
+		w.sendKeys("Test");
 		Thread.sleep(2000);
-		WebElement element1=driver.findElement(By.id("no"));
-		System.out.println("Before selection: "+element1.isSelected());
-		element1.click();
+		driver.findElement(By.id("pass")).sendKeys("1234");
 		Thread.sleep(2000);
-		System.out.println("For isSelected:"+element1.isSelected());
+		driver.findElement(By.id("u_0_b")).submit();
 		Thread.sleep(2000);
 		driver.close();
 
